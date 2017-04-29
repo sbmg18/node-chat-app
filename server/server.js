@@ -17,12 +17,22 @@ io.on('connection', (socket) => {
 
     socket.emit('newMessage', {
         from: "Admin",
-        text: "Test message",
-        createdAt: 1244
+        text: "Welcome to chat app!",
+        createdAt: new Date().getTime()
+    });
+
+    socket.broadcast.emit('newMessage', {
+        from: "Admin",
+        text: "New user joinned the chat",
+        createdAt: new Date().getTime()
     });
 
     socket.on('createMessage', (message) => {
-        console.log("Create message request", message);
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        });
     });
 
     socket.on('disconnect', () => {
