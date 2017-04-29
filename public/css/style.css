@@ -1,0 +1,32 @@
+#wrapper {
+  max-width: 808px;
+  margin: 0px auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#sidebar {
+    width: 28%;
+    float: left;
+}
+
+#messageBox {
+  width: 72%;
+  padding-top: 10px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.clearFloat {
+    clear: both;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+}
